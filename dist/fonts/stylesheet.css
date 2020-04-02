@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'TT Commons';
+    src: url('TTCommons-Medium.eot');
+    src: url('TTCommons-Medium.eot?#iefix') format('embedded-opentype'),
+        url('TTCommons-Medium.woff2') format('woff2'),
+        url('TTCommons-Medium.woff') format('woff'),
+        url('TTCommons-Medium.ttf') format('truetype'),
+        url('TTCommons-Medium.svg#TTCommons-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Commons';
+    src: url('TTCommons-Bold.eot');
+    src: url('TTCommons-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TTCommons-Bold.woff2') format('woff2'),
+        url('TTCommons-Bold.woff') format('woff'),
+        url('TTCommons-Bold.ttf') format('truetype'),
+        url('TTCommons-Bold.svg#TTCommons-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Commons';
+    src: url('TTCommons-Regular.eot');
+    src: url('TTCommons-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TTCommons-Regular.woff2') format('woff2'),
+        url('TTCommons-Regular.woff') format('woff'),
+        url('TTCommons-Regular.ttf') format('truetype'),
+        url('TTCommons-Regular.svg#TTCommons-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
