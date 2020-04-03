@@ -20,7 +20,7 @@
 
   #nav-icon {
     display: block;
-    margin-top: 14px;
+    margin-top: 8px;
   }
 
   .menu,
@@ -35,8 +35,13 @@
     }
   }
 
+  .info_bl {
+    padding: 50px 0;
+  }
+
   .head {
-    padding-top: 100px;
+    padding-top: 130px;
+    padding-bottom: 50px;
   }
 
   .head-item h1 {
@@ -104,13 +109,21 @@
     margin-bottom: 65px;
   }
 
+  .about_title-bl {
+    padding-left: 0;
+  }
+
   .about_title-bl .h2-title {
+    display: block;
+
     img {
+      margin-top: -70px;
+      float: right;
       position: static;
       bottom: 0;
       left: 0;
       display: inline-block;
-      animation: wobble-mob 1s infinite linear;
+      animation: wobble-mob 5s infinite linear;
       transform: rotate(90deg);
     }
   }
@@ -182,6 +195,13 @@
 
   .about-item {
     padding-left: 20px;
+    max-width: 235px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before {
+      left: 0;
+    }
 
     br {
       display: none;
@@ -261,11 +281,30 @@
     padding-right: 0;
   }
 
-  .cases-carousel .next {
-    right: 0;
+  .cases-carousel {
+     .prev,
+    .next {
+      background: 0 0;
+      border: 0;
+      font-size: 45px;
+      position: absolute;
+      top: inherit;
+      bottom: 3px;
+      transform: translateY(0%);
+      line-height: 1;
+      height: auto;
+      &:hover {
+        transform: none;
+      }
+    }
 
-    &:hover {
-      transform: translateX(0px) translateY(-50%);
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+      left: inherit;
     }
   }
 
@@ -293,6 +332,7 @@
 
   .about-img2 {
     text-align: center;
+    margin-bottom: 30px;
 
     img {
       max-height: 55vh;
@@ -301,6 +341,11 @@
 
   .cases-img {
     display: none;
+  }
+
+  .order-btn {
+    font-size: 21px;
+    padding: 12px 35px;
   }
 
   .cases-title {
@@ -318,110 +363,155 @@
     padding-left: 40px;
     position: relative;
   }
+
   .mb145 {
     margin-bottom: 45px;
   }
+  .cases-item {
+    margin-bottom: 80px;
+  }
+
   .cases-item .title {
     font-size: 27px;
     margin-bottom: 30px;
     padding-left: 40px;
-}
-  .mt-58, .mt-20, .mt-10 {
+  }
+
+  .mt-58,
+  .mt-20,
+  .mt-10 {
     margin-top: 30px;
   }
+
   .cases-carousel .next svg use {
     fill: #fff;
-}
-  .cases, .reviews {
+  }
+
+  .cases,
+  .reviews {
     padding: 65px 0;
   }
-  
+
   .reviews-title {
     margin-bottom: 40px;
     font-size: 40px;
-}
+  }
+
   .slider-reviews .item .profile .photo img {
     max-width: inherit;
   }
+
   #cursor {
     display: none !important;
   }
-  
+
   .slider-reviews {
     margin-top: 45px;
   }
-  #slider {
+
+  .slider-reviews #slider {
     height: inherit;
     min-height: inherit;
-    .prev,.next{
+
+    .prev,
+    .next {
       background: 0 0;
       border: 0;
       font-size: 45px;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 0%;
+      transform: translateY(0%);
+      line-height: 1;
     }
+
     .prev {
       left: 0;
     }
+
     .next {
       right: 0;
+      left: inherit;
     }
+  }
+  .slider-reviews:before {
+    display: none;
   }
   .slider-reviews .item .profile .blqvt {
     font-size: 20px;
+
     br {
       display: none;
     }
-}
-  
+  }
+
   .acquaintance-profile .img {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+
     img {
       max-height: 50vh;
     }
   }
+
   .xs-none {
     display: none;
   }
+
   .xs-block {
     display: block;
   }
+
   .acquaintance-title {
     font-size: 40px;
     margin-bottom: 35px;
-}
+  }
+
   .acquaintance-blqw {
     margin-bottom: 40px;
   }
+
   .acquaintance {
     padding: 65px 0;
   }
+  .slider-reviews .item {
+    margin-bottom: 20px;
+  }
+
   .footer_contacts {
     padding: 65px 0;
     text-align: center;
+
     .container {
       display: block;
     }
+
     .contact {
       margin-left: auto;
       margin-right: auto;
       margin-top: 30px;
     }
+
     .copy {
       margin-top: 30px;
       margin-bottom: 30px;
     }
   }
+
   .footer-list {
     display: block;
     text-align: center;
+
     li {
       margin-bottom: 30px;
+
       a {
         line-height: 1;
         font-size: 18px;
       }
+    }
+  }
+  .cases-content {
+    br {
+      display: none;
     }
   }
   .rezart-logo {
@@ -429,19 +519,51 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .footer {
     padding: 50px 0;
   }
+
   .container {
     max-width: 480px;
   }
+
   .success-item h1 {
     margin-bottom: 30px;
   }
+
   .success-item p {
     margin-bottom: 30px;
+
     br {
       display: none;
     }
   }
+
+  .about-row_bottom {
+    margin-top: 0;
+  }
+
+  .phone-mob {
+    display: block;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .advantage-item {
+    margin-bottom: 20px;
+  }
+  
+  .acquaintance-profile ul li a svg {
+    width: 44px;
+    height: 40px;
+    transition: .3s;
+    margin-top: 30px;
+}
+  
 }

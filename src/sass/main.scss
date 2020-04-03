@@ -34,6 +34,13 @@
     font-style: normal;
 }
 
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
 
 ::-webkit-scrollbar{
   width:10px;
@@ -1037,6 +1044,33 @@ body.compensate-for-scrollbar {
     .fancybox-thumbs__list a {
         max-width: calc(100% - 10px);
     }
+}
+
+.slick-dots {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 15px 10px;
+    &.slick-active {
+      button {
+        background: #ff5b01;
+        color: #ff5b01;
+      }
+    }
+    button {
+      display: block;
+      border: 0;
+      background: #000;
+      color: #000;
+//      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      font-size: 0;
+    }
+  }
 }
 @import 'info/bootstrap';
 @import 'info/main';

@@ -42,7 +42,7 @@ $(document).ready(function () {
     $('.menu li a').click(function () {
       $('.menu, .nav-contacts').hide();
     })
-    $('.info_bl .h2-title').html('<span>Кажется, <br>что</span> реализовать <br>недвижимость <br><span>— это просто</span> Но...');
+    $('.info_bl .h2-title').html('<span>Кажется, <br>что</span> реализовать <br>недвижимость <br><span>— это просто</span>, Но...');
 
     $('.mob-hide').hide();
     $('.mob-show').show();
@@ -59,12 +59,37 @@ $(document).ready(function () {
       prevArrow: '<button type="button" class="prev">‹</button>',
       nextArrow: '<button type="button" class="next">›</button>',
       rows: 1,
-      slidesPerRow: 1
+      slidesPerRow: 1,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          dots: true
+        }
+    },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: true
+
+        }
+    },
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true
+        }
+    }
+  ]
     });
-    
+
     $('#slider img[data-src]').each(function () {
       $(this).attr('src', $(this).data('src'));
 
+    })
+
+    $('.head-img img').each(function () {
+      $(this).attr('src', $('.head-img img').data('src'));
     })
   } else {
     var $slider = $("#slider");
@@ -73,7 +98,9 @@ $(document).ready(function () {
     }).slick({
       dots: false,
       centerMode: true,
-      arrows: false,
+      arrows: true,
+      prevArrow: '<button type="button" class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M990 737l-29 29-461-474L39 765l-29-28 461-473 29-29 29 28v1l461 473z"/></svg></button>',
+      nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M961 241L500 702 39 241l-29 29 461 461 29 29 29-29 461-461-29-29z"/></svg></button>',
       vertical: true,
       slidesToShow: 3,
       verticalSwiping: true,
@@ -91,7 +118,7 @@ $(document).ready(function () {
       var $slider = event.data.$slider;
       var delta = event.originalEvent.deltaY;
 
-      if (delta > 0) {
+      if (delta < 0) {
         $slider.slick("slickPrev");
       } else {
         $slider.slick("slickNext");
@@ -100,16 +127,16 @@ $(document).ready(function () {
 
 
 
+    /*
+        $(".slider-reviews").mousemove(function (event) {
 
-    $(".slider-reviews").mousemove(function (event) {
-
-      if (event.pageX > 0 || event.pageY > 0) {
-        $(this).find('#cursor').offset({
-          left: event.pageX,
-          top: event.pageY + 70
-        });
-      }
-    });
+          if (event.pageX > 0 || event.pageY > 0) {
+            $(this).find('#cursor').offset({
+              left: event.pageX,
+              top: event.pageY + 70
+            });
+          }
+        });*/
 
     $(".play-btn .box").mousemove(function (event) {
 
@@ -127,6 +154,59 @@ $(document).ready(function () {
 
 
 
+
+  $(window).on('resize', function () {
+    var win = $(this);
+    if (win.width() < 1200) {
+
+      $('.info_bl .h2-title').html('<span>Кажется, <br>что</span> реализовать <br>недвижимость <br><span>— это просто</span>, Но...');
+
+      $('.mob-hide').hide();
+      $('.mob-show').show();
+
+      $('.cases_more-btn.show').click(function () {
+        $('.cases-carousel').slick('refresh');
+      });
+
+      $("#slider").slick({
+        dots: false,
+        infinite: true,
+        adaptiveHeight: true,
+        speed: 300,
+        prevArrow: '<button type="button" class="prev">‹</button>',
+        nextArrow: '<button type="button" class="next">›</button>',
+        rows: 1,
+        slidesPerRow: 1
+      });
+
+      $('#slider img[data-src]').each(function () {
+        $(this).attr('src', $(this).data('src'));
+
+      })
+
+      $('.head-img img').each(function () {
+        $(this).attr('src', $('.head-img img').data('src'));
+      })
+    } else {
+
+      $(".play-btn .box").mousemove(function (event) {
+
+        if (event.pageX > 0 || event.pageY > 0) {
+          $(this).parent().find('img').offset({
+            left: event.pageX - 70,
+            top: event.pageY - 70
+          });
+        }
+      });
+    }
+
+
+
+
+  });
+
+
+
   $('.cases-carousel').slick({
     dots: false,
     infinite: true,
@@ -134,7 +214,34 @@ $(document).ready(function () {
     prevArrow: ' ',
     nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="122" height="108"><defs><path fill="#FF5B01" d="M64 101l51-47L64 6 53 17l26 25 3 3H7v17h75l-3 3-26 26 11 10m0 3L51 91l27-27H5V44h73L51 17 64 4l54 50-54 50z"/></defs><use xlink:href="#a" overflow="visible" fill="#FF5B01"/></svg></button>',
     rows: 1,
-    slidesPerRow: 1
+    slidesPerRow: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+           prevArrow: '<button type="button" class="prev">‹</button>',
+        nextArrow: '<button type="button" class="next">›</button>',
+          dots: true
+        }
+    },
+      {
+        breakpoint: 600,
+        settings: {
+           prevArrow: '<button type="button" class="prev">‹</button>',
+        nextArrow: '<button type="button" class="next">›</button>',
+          dots: true
+
+        }
+    },
+      {
+        breakpoint: 480,
+        settings: {
+          prevArrow: '<button type="button" class="prev">‹</button>',
+        nextArrow: '<button type="button" class="next">›</button>',
+          dots: true
+        }
+    }
+  ]
   });
 
 
@@ -142,6 +249,13 @@ $(document).ready(function () {
     $(this).parents(".cases-item").find('.cases-more').hide(200);
     $(this).parents(".cases-item").addClass('open');
     $(this).parents(".cases-item").find('.cases_more-btn').show(200);
+
+    var top = $(this).parents(".cases-item").offset().top;
+
+    $('body,html').animate({
+      scrollTop: top - 140
+    }, 300);
+
   })
 
   $('.cases_more-btn.show').click(function () {
@@ -228,6 +342,12 @@ $(document).ready(function () {
 
   });
 
+
+  $('[href="#reg"]').click(function () {
+    $('#reg input[name="type"]').val($(this).data('title'));
+    $('#reg .title').text($(this).data('title'));
+    $('#reg .order-btn').text($(this).data('text_btn'));
+  })
 
   var observer = lozad();
   observer.observe();

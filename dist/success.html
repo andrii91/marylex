@@ -15,6 +15,17 @@
   <title>Boutique-сервис для владельцев элитнойнедвижимости</title>
   <link type="text/css" rel="stylesheet" href="css/app.css" />
   <link rel="shortcut icon" href="images/favicon.png">
+  <style>
+#reset{border:solid 1px gray;background:linear-gradient(to top,#ff5b01 0,#ff7021 100%);color: #fff;margin:0; width:50px;height:50px; padding: 0; display: inline-block; vertical-align: top; position: absolute;
+    top: 0;
+    right: 0;    padding-top: 7px;}
+td {text-align:center;color: #fff;vertical-align: middle; background:#000; }
+#box td {border:solid 1px gray; text-align:center; font-size:30px; line-height: 1; color: #fff;width: 55px;height: 55px;}
+#box td:hover {color:#333;cursor: pointer;background: linear-gradient(to top,#ff5b01 0,#ff7021 100%);}
+.block_for_pyatnashki{clear:both;margin:0 auto;    width: 330px;
+    margin: 0 auto 30px;
+    padding: 0 50px;position: relative;}
+  </style>
 </head>
 
 <body id="top">
@@ -27,6 +38,12 @@
               <path d="M4652 6388l3-1023 173-3 172-2v2050h-350l2-1022zM4577 4748L3573 3375l-986-1351c-37-50-67-94-67-98 0-3 98-6 218-6l217 1 277 387c1206 1684 1589 2217 1595 2219 5 2 438-584 963-1302l955-1304 198-1c108 0 197 3 197 8 0 4-481 664-1068 1467L5004 4855l-172 3-172 2-83-112z" /></svg></a>
               <h1>спасибо</h1>
               <p>Скоро наш эксперт перезвонит и поможет решить <br>вашу задачу с недвижимостью. А пока <br>можете сыграть в «пятнашки» =) </p>
+              <div class="block_for_pyatnashki">
+                      <div id="box" style="display: inline-block;"><table><tbody><tr><td id="0 0">4</td><td id="0 1">14</td><td id="0 2">2</td><td id="0 3"></td></tr><tr><td id="1 0">12</td><td id="1 1">9</td><td id="1 2">5</td><td id="1 3">7</td></tr><tr><td id="2 0">15</td><td id="2 1">1</td><td id="2 2">13</td><td id="2 3">10</td></tr><tr><td id="3 0">6</td><td id="3 1">11</td><td id="3 2">8</td><td id="3 3">3</td></tr></tbody></table></div>
+                      <button id="reset"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"/></svg></button>
+
+                  </div>
+                  
               <a href="index.html" class="order-btn">Вернуться на главную</a>
       </div>
     </div>
@@ -102,9 +119,91 @@
   </div>
 
   
+  <script>
+var arr = [], box, ei,ej;           
+function swap(arr,i1,j1,i2,j2){       
+  t = arr[i1][j1];
+  arr[i1][j1] = arr[i2][j2];
+  arr[i2][j2] = t;
+}
+window.onload = function() {        
+  box = document.getElementById("box");
+  newGame();        
+  document.getElementById("reset").onclick = newGame;           
+}
+function cellClick(event) {
+  var event = event || window.event,
+    el = event.srcElement || event.target,
+    i = el.id.charAt(0),
+    j = el.id.charAt(2);
+  if((i == ei && Math.abs(j - ej) == 1) || (j == ej && Math.abs(i - ei) == 1)){         
+    document.getElementById(ei + " " + ej).innerHTML = el.innerHTML;
+    el.innerHTML = "";
+    ei = i;
+    ej = j;
+    var q = true;
+    for(i = 0; i < 4; ++i)
+      for(j = 0; j < 4; ++j)
+        if(i + j != 6 && document.getElementById(i + " " + j).innerHTML != i*4 + j + 1){
+          q = false;
+          break;
+        }
+//     q = true;
+        if(q) {
+//          alert("Victory!");
+          $.fancybox.open('<div class="mess"><div class="form"><div class="title">Поздравляем, Вы победили!</div> <a href="#" class="order-btn reset">Начать заново!</a> </div> <div>');
+          $('.reset').click(function(e){
+            e.preventDefault();
+            $('#reset').trigger('click');
+            $('.fancybox-close-small').trigger('click');
+          })
+        }
+      }
+}
+function newGame(){     
+  for(i = 0; i < 4; ++i){
+    arr[i] = []
+    for(j = 0; j < 4; ++j){
+      if(i + j != 6)
+        arr[i][j] = i*4 + j + 1;
+      else
+        arr[i][j] = "";
+    }
+  }
+  ei = 3;
+  ej = 3;
+  for(i = 0; i < 1600; ++i)
+    switch(Math.round(3*Math.random())){
+      case 0: if(ei != 0) swap(arr,ei,ej,--ei,ej); break; // up
+      case 1: if(ej != 3) swap(arr,ei,ej,ei, ++ej); break; // right
+      case 2: if(ei != 3) swap(arr,ei,ej,++ei,ej); break; // down
+      case 3: if(ej != 0) swap(arr,ei,ej,ei,--ej); // left
+    }
+  var table = document.createElement("table"),
+    tbody = document.createElement("tbody");          
+  table.appendChild(tbody);
+  for(i = 0; i < 4; ++i){
+    var row = document.createElement("tr");
+    for(j = 0; j < 4; ++j){
+      var cell = document.createElement("td");
+        cell.id = i + " " + j;
+        cell.onclick = cellClick;
+        cell.innerHTML = arr[i][j];
+        row.appendChild(cell);
+    }
+    tbody.appendChild(row);         
+  }
+  if(box.childNodes.length == 1)
+    box.removeChild(box.firstChild);  
+  box.appendChild(table); 
+}
+</script>
+  
 
   <script defer src="js/vendor.js"></script>
   <script defer src="js/app.js"></script>
+  
+  
 </body>
 
 </html>
