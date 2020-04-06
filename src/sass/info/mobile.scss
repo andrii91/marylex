@@ -57,6 +57,7 @@
   .head-img {
     margin-bottom: 60px;
     margin-right: 0;
+    margin-top: 50px;
   }
 
   .h2-title {
@@ -131,28 +132,28 @@
   /* Icon Wobble Horizontal */
   @-webkit-keyframes wobble-mob {
     16.65% {
-      -webkit-transform: translateY(6px) rotate(90deg);
-      transform: translateY(6px) rotate(90deg);
+      -webkit-transform: translateY(28px) rotate(90deg);
+      transform: translateY(28px) rotate(90deg);
     }
 
     33.3% {
-      -webkit-transform: translateY(-5px) rotate(90deg);
-      transform: translateY(-5px) rotate(90deg);
+      -webkit-transform: translateY(0px) rotate(90deg);
+      transform: translateY(0px) rotate(90deg);
     }
 
     49.95% {
-      -webkit-transform: translateY(4px) rotate(90deg);
-      transform: translateY(4px) rotate(90deg);
+      -webkit-transform: translateY(22px) rotate(90deg);
+      transform: translateY(22px) rotate(90deg);
     }
 
     66.6% {
-      -webkit-transform: translateY(-2px) rotate(90deg);
-      transform: translateY(-2px) rotate(90deg);
+      -webkit-transform: translateY(-6px) rotate(90deg);
+      transform: translateY(-6px) rotate(90deg);
     }
 
     83.25% {
-      -webkit-transform: translateY(1px) rotate(90deg);
-      transform: translateY(1px) rotate(90deg);
+      -webkit-transform: translateY(14px) rotate(90deg);
+      transform: translateY(14px) rotate(90deg);
     }
 
     100% {
@@ -163,28 +164,28 @@
 
   @keyframes wobble-mob {
     16.65% {
-      -webkit-transform: translateY(6px) rotate(90deg);
-      transform: translateY(6px) rotate(90deg);
+      -webkit-transform: translateY(28px) rotate(90deg);
+      transform: translateY(28px) rotate(90deg);
     }
 
     33.3% {
-      -webkit-transform: translateY(-5px) rotate(90deg);
-      transform: translateY(-5px) rotate(90deg);
+      -webkit-transform: translateY(0px) rotate(90deg);
+      transform: translateY(0px) rotate(90deg);
     }
 
     49.95% {
-      -webkit-transform: translateY(4px) rotate(90deg);
-      transform: translateY(4px) rotate(90deg);
+      -webkit-transform: translateY(22px) rotate(90deg);
+      transform: translateY(22px) rotate(90deg);
     }
 
     66.6% {
-      -webkit-transform: translateY(-2px) rotate(90deg);
-      transform: translateY(-2px) rotate(90deg);
+      -webkit-transform: translateY(-6px) rotate(90deg);
+      transform: translateY(-6px) rotate(90deg);
     }
 
     83.25% {
-      -webkit-transform: translateY(1px) rotate(90deg);
-      transform: translateY(1px) rotate(90deg);
+      -webkit-transform: translateY(14px) rotate(90deg);
+      transform: translateY(14px) rotate(90deg);
     }
 
     100% {
@@ -263,7 +264,7 @@
   }
 
   .decision-video svg {
-    animation: wobble-mob 1s infinite linear;
+    animation: wobble-mob 5s infinite linear;
     transform: rotate(90deg);
     float: right;
   }
@@ -282,17 +283,19 @@
   }
 
   .cases-carousel {
-     .prev,
+
+    .prev,
     .next {
       background: 0 0;
       border: 0;
       font-size: 45px;
       position: absolute;
       top: inherit;
-      bottom: 3px;
+      bottom: -5px;
       transform: translateY(0%);
       line-height: 1;
       height: auto;
+
       &:hover {
         transform: none;
       }
@@ -333,7 +336,7 @@
   .about-img2 {
     text-align: center;
     margin-bottom: 30px;
-
+margin-top: 40px;
     img {
       max-height: 55vh;
     }
@@ -367,6 +370,7 @@
   .mb145 {
     margin-bottom: 45px;
   }
+
   .cases-item {
     margin-bottom: 80px;
   }
@@ -419,7 +423,7 @@
       border: 0;
       font-size: 45px;
       position: absolute;
-      bottom: 0%;
+      bottom: -5px;
       transform: translateY(0%);
       line-height: 1;
     }
@@ -433,9 +437,11 @@
       left: inherit;
     }
   }
+
   .slider-reviews:before {
     display: none;
   }
+
   .slider-reviews .item .profile .blqvt {
     font-size: 20px;
 
@@ -472,6 +478,7 @@
   .acquaintance {
     padding: 65px 0;
   }
+
   .slider-reviews .item {
     margin-bottom: 20px;
   }
@@ -509,11 +516,13 @@
       }
     }
   }
+
   .cases-content {
     br {
       display: none;
     }
   }
+
   .rezart-logo {
     float: none;
     margin-left: auto;
@@ -558,12 +567,12 @@
   .advantage-item {
     margin-bottom: 20px;
   }
-  
+
   .acquaintance-profile ul li a svg {
     width: 44px;
     height: 40px;
     transition: .3s;
     margin-top: 30px;
-}
-  
+  }
+
 }

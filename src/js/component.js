@@ -102,7 +102,7 @@ $(document).ready(function () {
       prevArrow: '<button type="button" class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M990 737l-29 29-461-474L39 765l-29-28 461-473 29-29 29 28v1l461 473z"/></svg></button>',
       nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M961 241L500 702 39 241l-29 29 461 461 29 29 29-29 461-461-29-29z"/></svg></button>',
       vertical: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       verticalSwiping: true,
       infinite: true
     });
