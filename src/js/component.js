@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('.cases_more-btn.show').click(function () {
       $('.cases-carousel').slick('refresh');
     });
-
+$('.acquaintance-profile .img img').attr('src', $(this).data('src'));
     $("#slider").slick({
       dots: false,
       infinite: true,
@@ -161,8 +161,8 @@ $(document).ready(function () {
 
       $('.info_bl .h2-title').html('<span>Кажется, <br>что</span> реализовать <br>недвижимость <br><span>— это просто</span>, Но...');
 
-      $('.mob-hide').hide();
-      $('.mob-show').show();
+//      $('.mob-hide').hide();
+//      $('.mob-show').show();
 
       $('.cases_more-btn.show').click(function () {
         $('.cases-carousel').slick('refresh');

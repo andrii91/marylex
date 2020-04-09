@@ -295,6 +295,7 @@
       transform: translateY(0%);
       line-height: 1;
       height: auto;
+      margin: 0;
 
       &:hover {
         transform: none;
@@ -336,7 +337,8 @@
   .about-img2 {
     text-align: center;
     margin-bottom: 30px;
-margin-top: 40px;
+    margin-top: 40px;
+
     img {
       max-height: 55vh;
     }
@@ -575,4 +577,14 @@ margin-top: 40px;
     margin-top: 30px;
   }
 
+  .play-btn img {
+    top: -95px;
+  }
+
+  .nav-contacts li a[href="#call"] {
+    margin-left: 0;
+  }
+  .slick-dots {
+    width: 100%;
+  }
 }
