@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('.cases_more-btn.show').click(function () {
       $('.cases-carousel').slick('refresh');
     });
-$('.acquaintance-profile .img img').attr('src', $(this).data('src'));
+    $('.acquaintance-profile .img img').attr('src', $('.acquaintance-profile .img img').data('src'));
     $("#slider").slick({
       dots: false,
       infinite: true,
@@ -61,24 +61,24 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
       rows: 1,
       slidesPerRow: 1,
       responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          dots: true
-        }
+        {
+          breakpoint: 1024,
+          settings: {
+            dots: true
+          }
     },
-      {
-        breakpoint: 600,
-        settings: {
-          dots: true
+        {
+          breakpoint: 600,
+          settings: {
+            dots: true
 
-        }
+          }
     },
-      {
-        breakpoint: 480,
-        settings: {
-          dots: true
-        }
+        {
+          breakpoint: 480,
+          settings: {
+            dots: true
+          }
     }
   ]
     });
@@ -92,7 +92,7 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
       $(this).attr('src', $('.head-img img').data('src'));
     })
   } else {
-    var $slider = $("#slider");
+/*    var $slider = $("#slider");
     $slider.on("init", function () {
       mouseWheel($slider);
     }).slick({
@@ -102,7 +102,10 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
       prevArrow: '<button type="button" class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M990 737l-29 29-461-474L39 765l-29-28 461-473 29-29 29 28v1l461 473z"/></svg></button>',
       nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M961 241L500 702 39 241l-29 29 461 461 29 29 29-29 461-461-29-29z"/></svg></button>',
       vertical: true,
+      speed: 1000,
       slidesToShow: 2,
+      rows: 1,
+      adaptiveHeight: true,
       verticalSwiping: true,
       infinite: true
     });
@@ -123,17 +126,17 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
       } else {
         $slider.slick("slickNext");
       }
-    }
+    }*/
 
 
 
-    /*
-        $(".slider-reviews").mousemove(function (event) {
+    
+   /*     $(".slider-reviews").mousemove(function (event) {
 
           if (event.pageX > 0 || event.pageY > 0) {
             $(this).find('#cursor').offset({
               left: event.pageX,
-              top: event.pageY + 70
+              top: event.pageY 
             });
           }
         });*/
@@ -161,8 +164,8 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
 
       $('.info_bl .h2-title').html('<span>Кажется, <br>что</span> реализовать <br>недвижимость <br><span>— это просто</span>, Но...');
 
-//      $('.mob-hide').hide();
-//      $('.mob-show').show();
+      //      $('.mob-hide').hide();
+      //      $('.mob-show').show();
 
       $('.cases_more-btn.show').click(function () {
         $('.cases-carousel').slick('refresh');
@@ -219,16 +222,16 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
       {
         breakpoint: 1024,
         settings: {
-           prevArrow: '<button type="button" class="prev">‹</button>',
-        nextArrow: '<button type="button" class="next">›</button>',
+          prevArrow: '<button type="button" class="prev">‹</button>',
+          nextArrow: '<button type="button" class="next">›</button>',
           dots: true
         }
     },
       {
         breakpoint: 600,
         settings: {
-           prevArrow: '<button type="button" class="prev">‹</button>',
-        nextArrow: '<button type="button" class="next">›</button>',
+          prevArrow: '<button type="button" class="prev">‹</button>',
+          nextArrow: '<button type="button" class="next">›</button>',
           dots: true
 
         }
@@ -237,7 +240,7 @@ $('.acquaintance-profile .img img').attr('src', $(this).data('src'));
         breakpoint: 480,
         settings: {
           prevArrow: '<button type="button" class="prev">‹</button>',
-        nextArrow: '<button type="button" class="next">›</button>',
+          nextArrow: '<button type="button" class="next">›</button>',
           dots: true
         }
     }

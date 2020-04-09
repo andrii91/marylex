@@ -795,12 +795,12 @@ height: 380px;
 .slider-reviews {
   position: relative;
   cursor: ns-resize	;
-  /*&:hover {
+  &:hover {
     #cursor {
       display: block;
     }
-  }*/
-  &:before {
+  }
+/*  &:before {
       content: "";
       width: 144px;
     height: 144px;
@@ -811,7 +811,7 @@ height: 380px;
     left: -69px;
     z-index: 1;
     transform: scale(.8);
-    }
+    }*/
   
   .prev, .next {
     border: 0;
@@ -843,10 +843,22 @@ height: 380px;
     bottom: 350px;
     
   }
-  
+/*  .slick-slide {
+    >div {
+      height: 600px;
+          display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    }
+  }
+  */
   .item {
 padding: 0 30px;
-    margin: 30px 0;
+//      height: 600px;
+    margin: 30px 0 60px;
     .profile {
       display: flex;
       .photo {
@@ -885,22 +897,28 @@ padding: 0 30px;
 
 .reviews {
   background-color: #e6e6e6;
-  overflow: hidden;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 #slider {
       max-width: 615px;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh;
-  min-height: 1000px;
+  height: 880px;
+  overflow-y: scroll;
+//  min-height: 1000px;
+  &::-webkit-scrollbar{
+  width:0px;
+  height: 0px;
+}
 }
 
 #cursor {
-    position: absolute;
+/*    position: absolute;
     display: none;
     cursor: none;
-  z-index: 999;
+  z-index: 999;*/
 }
 
 .reviews-title {
@@ -1353,4 +1371,33 @@ line-height: 1.17;
 .about-img2 {
       text-align: right;
     max-width: 550px;
+}
+
+.reviews-st {
+//  position: sticky;
+//  padding-top: 100px;
+//  top: 0;
+ /* .reviews-title {
+    margin-bottom: 2.906vw;
+    font-size: 2.125vw;
+    line-height: 1;
+  }
+  .reviews-item .title {
+    font-size: 1vw;
+    margin-bottom: 1.344vw;
+  }*/
+  .reviews-item {
+    position: relative;
+    ul {
+      li {
+//         font-size: 1vw;
+      }
+    }
+  }
+  #cursor {
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
