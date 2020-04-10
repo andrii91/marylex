@@ -92,54 +92,54 @@ $(document).ready(function () {
       $(this).attr('src', $('.head-img img').data('src'));
     })
   } else {
-/*    var $slider = $("#slider");
-    $slider.on("init", function () {
-      mouseWheel($slider);
-    }).slick({
-      dots: false,
-      centerMode: false,
-      arrows: true,
-      prevArrow: '<button type="button" class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M990 737l-29 29-461-474L39 765l-29-28 461-473 29-29 29 28v1l461 473z"/></svg></button>',
-      nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M961 241L500 702 39 241l-29 29 461 461 29 29 29-29 461-461-29-29z"/></svg></button>',
-      vertical: true,
-      speed: 1000,
-      slidesToShow: 2,
-      rows: 1,
-      adaptiveHeight: true,
-      verticalSwiping: true,
-      infinite: true
-    });
+    /*    var $slider = $("#slider");
+        $slider.on("init", function () {
+          mouseWheel($slider);
+        }).slick({
+          dots: false,
+          centerMode: false,
+          arrows: true,
+          prevArrow: '<button type="button" class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M990 737l-29 29-461-474L39 765l-29-28 461-473 29-29 29 28v1l461 473z"/></svg></button>',
+          nextArrow: '<button type="button" class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M961 241L500 702 39 241l-29 29 461 461 29 29 29-29 461-461-29-29z"/></svg></button>',
+          vertical: true,
+          speed: 1000,
+          slidesToShow: 2,
+          rows: 1,
+          adaptiveHeight: true,
+          verticalSwiping: true,
+          infinite: true
+        });
 
-    function mouseWheel($slider) {
-      $('.slider-reviews').on("wheel", {
-        $slider: $slider
-      }, mouseWheelHandler);
-    }
+        function mouseWheel($slider) {
+          $('.slider-reviews').on("wheel", {
+            $slider: $slider
+          }, mouseWheelHandler);
+        }
 
-    function mouseWheelHandler(event) {
-      event.preventDefault();
-      var $slider = event.data.$slider;
-      var delta = event.originalEvent.deltaY;
+        function mouseWheelHandler(event) {
+          event.preventDefault();
+          var $slider = event.data.$slider;
+          var delta = event.originalEvent.deltaY;
 
-      if (delta < 0) {
-        $slider.slick("slickPrev");
-      } else {
-        $slider.slick("slickNext");
-      }
-    }*/
-
-
-
-    
-   /*     $(".slider-reviews").mousemove(function (event) {
-
-          if (event.pageX > 0 || event.pageY > 0) {
-            $(this).find('#cursor').offset({
-              left: event.pageX,
-              top: event.pageY 
-            });
+          if (delta < 0) {
+            $slider.slick("slickPrev");
+          } else {
+            $slider.slick("slickNext");
           }
-        });*/
+        }*/
+
+
+
+
+    /*     $(".slider-reviews").mousemove(function (event) {
+
+           if (event.pageX > 0 || event.pageY > 0) {
+             $(this).find('#cursor').offset({
+               left: event.pageX,
+               top: event.pageY 
+             });
+           }
+         });*/
 
     $(".play-btn .box").mousemove(function (event) {
 
@@ -351,6 +351,50 @@ $(document).ready(function () {
     $('#reg .title').text($(this).data('title'));
     $('#reg .order-btn').text($(this).data('text_btn'));
   })
+
+
+  var step = 0;
+  var heightScroll = 0;
+  $('#slider .item').each(function(){
+    heightScroll = heightScroll + $(this).height() + 60;
+  })
+  heightScroll = heightScroll - $("#slider").height();
+  
+  
+  $(document).keyup(function (e) {
+    e.preventDefault();
+
+    if (e.which == 38) {
+      step = step - 200;
+      if (step < 0) {
+        step = 0;
+      }
+      $('#slider').animate({
+        scrollTop: step
+      }, 100);
+
+
+    }
+
+    if (e.which == 40) {
+      
+      if(step < heightScroll ){
+        step = step + 200;
+      }
+      $('#slider').animate({
+        scrollTop: step
+      }, 100);
+
+
+    }
+      console.log('heightScroll', heightScroll);
+      console.log('step', step);
+
+  }).keydown(function (e) {
+    e.preventDefault();
+
+
+  });
 
   var observer = lozad();
   observer.observe();
