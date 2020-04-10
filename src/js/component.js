@@ -360,11 +360,11 @@ $(document).ready(function () {
   })
   heightScroll = heightScroll - $("#slider").height();
   
-  
+
   $(document).keyup(function (e) {
-    e.preventDefault();
 
     if (e.which == 38) {
+      e.preventDefault();
       step = step - 200;
       if (step < 0) {
         step = 0;
@@ -377,7 +377,7 @@ $(document).ready(function () {
     }
 
     if (e.which == 40) {
-      
+      e.preventDefault();
       if(step < heightScroll ){
         step = step + 200;
       }
@@ -387,12 +387,6 @@ $(document).ready(function () {
 
 
     }
-      console.log('heightScroll', heightScroll);
-      console.log('step', step);
-
-  }).keydown(function (e) {
-    e.preventDefault();
-
 
   });
 
