@@ -353,42 +353,63 @@ $(document).ready(function () {
   })
 
 
-  var step = 0;
+  var step = 200;
   var heightScroll = 0;
-  $('#slider .item').each(function(){
+  $('#slider .item').each(function () {
     heightScroll = heightScroll + $(this).height() + 60;
   })
   heightScroll = heightScroll - $("#slider").height();
+
+  $('.arr_top').click(function () {
+    step = step - 200;
+    if (step < 0) {
+      step = 0;
+    }
+    $('#slider').animate({
+      scrollTop: step
+    }, 500);
+  })
   
-
-  $(document).keyup(function (e) {
-
-    if (e.which == 38) {
-      e.preventDefault();
-      step = step - 200;
-      if (step < 0) {
-        step = 0;
-      }
-      $('#slider').animate({
-        scrollTop: step
-      }, 100);
-
-
+  $('.arr_bottom').click(function () {
+    if (step < heightScroll) {
+      step = step + 200;
     }
+    $('#slider').animate({
+      scrollTop: step
+    }, 500);
+  })
+  
+  
+  /*  $('#slider').keyup(function (e) {
 
-    if (e.which == 40) {
-      e.preventDefault();
-      if(step < heightScroll ){
-        step = step + 200;
+      if (e.which == 38) {
+        e.preventDefault();
+        step = step - 200;
+        if (step < 0) {
+          step = 0;
+        }
+        $('#slider').animate({
+          scrollTop: step
+        }, 100);
+
+
       }
-      $('#slider').animate({
-        scrollTop: step
-      }, 100);
+
+      if (e.which == 40) {
+        e.preventDefault();
+        if(step < heightScroll ){
+          step = step + 200;
+        }
+        $('#slider').animate({
+          scrollTop: step
+        }, 100);
 
 
-    }
+      }
+        console.log('heightScroll', heightScroll);
+        console.log('step', step);
 
-  });
+    });*/
 
   var observer = lozad();
   observer.observe();

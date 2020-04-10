@@ -899,6 +899,12 @@ padding: 0 30px;
   background-color: #e6e6e6;
   padding-bottom: 60px;
   padding-top: 60px;
+    -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none; 
 }
 
 #slider {
@@ -912,10 +918,59 @@ padding: 0 30px;
   width:0px;
   height: 0px;
 }
+  
+
+
 }
 
 #cursor {
-width: 115px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  z-index: 99999;
+  border: 2px solid #ff5b01;
+  .arr_top {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+      height: 30px;
+    transform: translateX(-50%);cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+    
+    svg {
+      width: 30px;
+      transition: .3s;
+       &:focus {
+      outline: 0;
+    }
+       &:hover {
+        fill: #ff5b01;
+      }
+    }
+  }
+  .arr_bottom {
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+    left: 50%;
+      height: 30px;
+    transform: translateX(-50%);
+     &:focus {
+      outline: 0;
+    }
+    svg {
+      transition: .3s;
+      width: 30px;
+       &:focus {
+      outline: 0;
+    }
+      &:hover {
+        fill: #ff5b01;
+      }
+    }
+  }
 }
 
 .reviews-title {
